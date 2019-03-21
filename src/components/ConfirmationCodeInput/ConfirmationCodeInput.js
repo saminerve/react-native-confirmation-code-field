@@ -63,9 +63,10 @@ class ConfirmationCodeInput extends PureComponent<Props, State> {
     this.cellsLayouts[`${index}`] = { x, xEnd: x + width, y, yEnd: y + height };
   };
 
-  renderCode = (codeSymbol: string, index: number) => {
+  renderCode = (entrySymbol: string, index: number) => {
     const { cellProps, maskSymbol } = this.props;
     const isActive = this.getCurrentIndex() === index;
+    const codeSymbol = entrySymbol.toUpperCase();
 
     let customProps = null;
 
